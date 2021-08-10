@@ -26,7 +26,6 @@ $light-grayish-blue: hsl(210, 46%, 95%);
 @mixin mobile {
     @media (max-width: 768px) {
         .container {
-            margin-block: 2em;
             display: grid;
             grid-gap: 1.5em;
             grid-template-columns: unset;
