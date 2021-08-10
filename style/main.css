@@ -24,58 +24,6 @@ main {
           flex-direction: column;
 }
 
-.container {
-  margin-block: 2em;
-  min-height: 80vh;
-  width: 80%;
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 1.5em;
-  -ms-grid-columns: (minmax(175px, 1fr))[2] (1fr)[2];
-      grid-template-columns: repeat(2, minmax(175px, 1fr)) repeat(2, 1fr);
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
-      grid-template-areas: "rev-1 rev-1 rev-2 rev-3" "rev-4 rev-5 rev-5 rev-3";
-}
-
-@media (max-width: 768px) {
-  .container {
-    display: -ms-grid;
-    display: grid;
-    grid-gap: 1.5em;
-    -ms-grid-columns: unset;
-        grid-template-columns: unset;
-    -ms-grid-rows: (auto)[5];
-        grid-template-rows: repeat(5, auto);
-        grid-template-areas: "rev-1" "rev-2" "rev-3" "rev-4" "rev-5";
-  }
-  .rev-1 {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: rev-1;
-  }
-  .rev-2 {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: rev-2;
-  }
-  .rev-3 {
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
-    grid-area: rev-3;
-  }
-  .rev-4 {
-    -ms-grid-row: 4;
-    -ms-grid-column: 1;
-    grid-area: rev-4;
-  }
-  .rev-5 {
-    -ms-grid-row: 5;
-    -ms-grid-column: 1;
-    grid-area: rev-5;
-  }
-}
-
 .card {
   height: auto;
   border-radius: 5px;
@@ -175,6 +123,7 @@ main {
   -ms-grid-column: 4;
   grid-area: rev-3;
   background-color: white;
+  color: black;
 }
 
 .rev-3 .profile .img-holder img {
@@ -186,6 +135,7 @@ main {
   -ms-grid-column: 1;
   grid-area: rev-4;
   background-color: white;
+  color: black;
 }
 
 .rev-4 .profile .img-holder img {
@@ -203,4 +153,31 @@ main {
 
 .rev-5 .profile .img-holder img {
   border: 2px solid #7541c8;
+}
+
+.container {
+  margin-block: 2em;
+  min-height: 80vh;
+  width: 80%;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1.5em;
+  -ms-grid-columns: (minmax(175px, 1fr))[2] (1fr)[2];
+      grid-template-columns: repeat(2, minmax(175px, 1fr)) repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas: "rev-1 rev-1 rev-2 rev-3" "rev-4 rev-5 rev-5 rev-3";
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 1.5em;
+    -ms-grid-columns: unset;
+        grid-template-columns: unset;
+    -ms-grid-rows: (auto)[5];
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: "rev-1" "rev-2" "rev-3" "rev-4" "rev-5";
+  }
 }

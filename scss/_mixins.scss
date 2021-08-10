@@ -1,0 +1,74 @@
+// Creating the Card
+@mixin create-card {
+    .card {
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.200);
+        padding: 2em;
+        .profile {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            .img-holder {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                img {
+                    border-radius: 50%;
+                    border: 2px solid black;
+                }
+            }
+            .info {
+                font-size: 1.1rem;
+                margin-block: 0.5em;
+                margin-inline-start: 1em;
+                .name {
+                    font-family: 'Barlow Semi Condensed', sans-serif;
+                    margin: 0.25em;
+                }
+                .verified {
+                    font-family: 'Barlow Semi Condensed', sans-serif;
+                    margin: 0.25em;
+                    opacity: 0.5;
+                }
+            }
+        }
+        .review {
+            padding-block: 20px;
+            font-family: 'Barlow Semi Condensed', sans-serif;
+            font-weight: 600;
+            font-size: 1.4em;
+        }
+        .quote {
+            font-family: 'Barlow Semi Condensed', sans-serif;
+            opacity: 0.7;
+            font-weight: 500;
+            height: auto;
+        }
+    }
+}
+
+// Beautifying the card content
+@mixin create-card-content($index, $background-color, $text-color, $img-border-color) {
+    .rev-#{$index} {
+        grid-area: rev-#{$index};
+        background-color: $background-color;
+        color: $text-color;
+        .profile .img-holder img {
+            border: 2px solid $img-border-color;
+        }
+    }
+}
+
+// Adding responsiveness using media queries
+@mixin mobile {
+    @media (max-width: 768px) {
+        .container {
+            display: grid;
+            grid-gap: 1.5em;
+            grid-template-columns: unset;
+            grid-template-rows: repeat(5, auto);
+            grid-template-areas: "rev-1" "rev-2" "rev-3" "rev-4" "rev-5";
+        }
+    }
+}

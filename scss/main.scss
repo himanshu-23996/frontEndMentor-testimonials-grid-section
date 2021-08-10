@@ -1,5 +1,6 @@
 @import './reset';
 @import './vars_&_config';
+@import './mixins';
 // Style
 main {
     display: flex;
@@ -8,6 +9,12 @@ main {
     flex-direction: column;
 }
 
+@include create-card;
+@include create-card-content($index:1, $background-color:$moderate-violet, $text-color:$white, $img-border-color:$light-gray);
+@include create-card-content($index:2, $background-color:$very-dark-grayish-blue, $text-color:$white, $img-border-color:$light-grayish-blue);
+@include create-card-content($index:3, $background-color:$white, $text-color:black, $img-border-color:$white);
+@include create-card-content($index:4, $background-color:$white, $text-color:black, $img-border-color:$light-gray);
+@include create-card-content($index:5, $background-color:$very-dark-blackish-blue, $text-color:$white, $img-border-color:$moderate-violet);
 .container {
     margin-block: 2em;
     min-height: 80vh;
@@ -20,112 +27,3 @@ main {
 }
 
 @include mobile;
-.card {
-    height: auto;
-    // overflow: hidden;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.200);
-    padding: 2em;
-    .profile {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        .img-holder {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            img {
-                // grid-row: 1/2;
-                border-radius: 50%;
-                border: 2px solid black;
-            }
-        }
-        .info {
-            font-size: 1.1rem;
-            margin-block: 0.5em;
-            margin-inline-start: 1em;
-            .name {
-                font-family: 'Barlow Semi Condensed', sans-serif;
-                margin: 0.25em;
-            }
-            .verified {
-                font-family: 'Barlow Semi Condensed', sans-serif;
-                margin: 0.25em;
-                opacity: 0.5;
-            }
-        }
-    }
-    .review {
-        padding-block: 20px;
-        font-family: 'Barlow Semi Condensed', sans-serif;
-        font-weight: 600;
-        font-size: 1.4em;
-    }
-    .quote {
-        font-family: 'Barlow Semi Condensed', sans-serif;
-        opacity: 0.7;
-        font-weight: 500;
-        height: auto;
-        // font-size: 0.8em;
-    }
-}
-
-.rev-1 {
-    grid-area: rev-1;
-    background-color: $moderate-violet;
-    color: $white;
-    // border-radius: 5px;
-    // box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.200);
-    // padding: 2em;
-    .profile .img-holder img {
-        border: 2px solid $light-gray;
-    }
-}
-
-.rev-2 {
-    grid-area: rev-2;
-    background-color: $very-dark-grayish-blue;
-    color: $white;
-    // border-radius: 5px;
-    // box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.200);
-    // padding: 2em;
-    .profile .img-holder img {
-        border: 2px solid $light-grayish-blue;
-    }
-}
-
-.rev-3 {
-    grid-area: rev-3;
-    background-color: $white;
-    // color: $white;
-    // border-radius: 5px;
-    // box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.200);
-    // padding: 2em;
-    .profile .img-holder img {
-        border: 2px solid $white;
-    }
-}
-
-.rev-4 {
-    grid-area: rev-4;
-    background-color: $white;
-    // color: $white;
-    // border-radius: 5px;
-    // box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.200);
-    // padding: 2em;
-    .profile .img-holder img {
-        border: 2px solid $light-gray;
-    }
-}
-
-.rev-5 {
-    grid-area: rev-5;
-    background-color: $very-dark-blackish-blue;
-    color: $white;
-    // border-radius: 5px;
-    // box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.200);
-    // padding: 2em;
-    .profile .img-holder img {
-        border: 2px solid $moderate-violet;
-    }
-}
