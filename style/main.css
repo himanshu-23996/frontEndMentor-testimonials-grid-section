@@ -7,3 +7,199 @@
   -webkit-box-sizing: 0;
           box-sizing: 0;
 }
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container {
+  height: 80vh;
+  width: 80%;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1.5em;
+  -ms-grid-columns: (minmax(175px, 1fr))[2] (1fr)[2];
+      grid-template-columns: repeat(2, minmax(175px, 1fr)) repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas: "rev-1 rev-1 rev-2 rev-3" "rev-4 rev-5 rev-5 rev-3";
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-block: 2em;
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 1.5em;
+    -ms-grid-columns: unset;
+        grid-template-columns: unset;
+    -ms-grid-rows: (auto)[5];
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: "rev-1" "rev-2" "rev-3" "rev-4" "rev-5";
+  }
+  .rev-1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: rev-1;
+  }
+  .rev-2 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: rev-2;
+  }
+  .rev-3 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: rev-3;
+  }
+  .rev-4 {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: rev-4;
+  }
+  .rev-5 {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    grid-area: rev-5;
+  }
+}
+
+.card {
+  height: auto;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 2em;
+}
+
+.card .profile {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+}
+
+.card .profile .img-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .profile .img-holder img {
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+.card .profile .info {
+  margin-block: 0.5em;
+  -webkit-margin-start: 1em;
+          margin-inline-start: 1em;
+}
+
+.card .profile .info .name {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  margin: 0.25em;
+}
+
+.card .profile .info .verified {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  margin: 0.25em;
+  opacity: 0.5;
+}
+
+.card .review {
+  padding-block: 20px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 1.4em;
+}
+
+.card .quote {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  opacity: 0.7;
+  font-weight: 500;
+  height: auto;
+}
+
+.rev-1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: rev-1;
+  background-color: #7541c8;
+  color: white;
+}
+
+.rev-1 .profile .img-holder img {
+  border: 2px solid #cfcfcf;
+}
+
+.rev-2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: rev-2;
+  background-color: #48556a;
+  color: white;
+}
+
+.rev-2 .profile .img-holder img {
+  border: 2px solid #ecf2f8;
+}
+
+.rev-3 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: rev-3;
+  background-color: white;
+}
+
+.rev-3 .profile .img-holder img {
+  border: 2px solid white;
+}
+
+.rev-4 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: rev-4;
+  background-color: white;
+}
+
+.rev-4 .profile .img-holder img {
+  border: 2px solid #cfcfcf;
+}
+
+.rev-5 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: rev-5;
+  background-color: #19212e;
+  color: white;
+}
+
+.rev-5 .profile .img-holder img {
+  border: 2px solid #7541c8;
+}

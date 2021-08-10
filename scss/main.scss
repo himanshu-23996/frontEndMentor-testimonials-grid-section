@@ -1,2 +1,129 @@
 @import './reset';
 @import './vars_&_config';
+// Style
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    height: 80vh;
+    width: 80%;
+    display: grid;
+    grid-gap: 1.5em;
+    grid-template-columns: repeat(2, minmax(175px, 1fr)) repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "rev-1 rev-1 rev-2 rev-3" "rev-4 rev-5 rev-5 rev-3";
+}
+
+@include mobile;
+.card {
+    height: auto;
+    // overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.200);
+    padding: 2em;
+    .profile {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        .img-holder {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            img {
+                // grid-row: 1/2;
+                border-radius: 50%;
+                border: 2px solid black;
+            }
+        }
+        .info {
+            margin-block: 0.5em;
+            margin-inline-start: 1em;
+            .name {
+                font-family: 'Barlow Semi Condensed', sans-serif;
+                margin: 0.25em;
+            }
+            .verified {
+                font-family: 'Barlow Semi Condensed', sans-serif;
+                margin: 0.25em;
+                opacity: 0.5;
+            }
+        }
+    }
+    .review {
+        padding-block: 20px;
+        font-family: 'Barlow Semi Condensed', sans-serif;
+        font-weight: 600;
+        font-size: 1.4em;
+    }
+    .quote {
+        font-family: 'Barlow Semi Condensed', sans-serif;
+        opacity: 0.7;
+        font-weight: 500;
+        height: auto;
+        // font-size: 0.8em;
+    }
+}
+
+.rev-1 {
+    grid-area: rev-1;
+    background-color: $moderate-violet;
+    color: $white;
+    // border-radius: 5px;
+    // box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.200);
+    // padding: 2em;
+    .profile .img-holder img {
+        border: 2px solid $light-gray;
+    }
+}
+
+.rev-2 {
+    grid-area: rev-2;
+    background-color: $very-dark-grayish-blue;
+    color: $white;
+    // border-radius: 5px;
+    // box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.200);
+    // padding: 2em;
+    .profile .img-holder img {
+        border: 2px solid $light-grayish-blue;
+    }
+}
+
+.rev-3 {
+    grid-area: rev-3;
+    background-color: $white;
+    // color: $white;
+    // border-radius: 5px;
+    // box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.200);
+    // padding: 2em;
+    .profile .img-holder img {
+        border: 2px solid $white;
+    }
+}
+
+.rev-4 {
+    grid-area: rev-4;
+    background-color: $white;
+    // color: $white;
+    // border-radius: 5px;
+    // box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.200);
+    // padding: 2em;
+    .profile .img-holder img {
+        border: 2px solid $light-gray;
+    }
+}
+
+.rev-5 {
+    grid-area: rev-5;
+    background-color: $very-dark-blackish-blue;
+    color: $white;
+    // border-radius: 5px;
+    // box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.200);
+    // padding: 2em;
+    .profile .img-holder img {
+        border: 2px solid $moderate-violet;
+    }
+}
